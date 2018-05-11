@@ -1,0 +1,9 @@
+{"extName": {
+   "message": "Meta Download",
+   "description": "Extension name"},
+ "extDesc": {
+   "message": "Save Metadata on download Context Menu Button",
+   "description": "Extension description"},
+ "openContextMenuTitle": {
+   "message": "Meta Download",
+   "description": "context menu button text"}}
