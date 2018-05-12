@@ -3,14 +3,14 @@ var storage = {};
 
 function saveMeta(x){
   var downloadItem = x[0], info = storage[downloadItem.id];
-  var result = `----\r
-url: ${downloadItem.url}\r
-pageTitle: ${info.title}\r
-pageUrl: ${info.pageUrl}\r
-startTime: ${downloadItem.startTime}\r
+  var result = `----
+url: ${downloadItem.url}
+pageTitle: ${info.title}
+pageUrl: ${info.pageUrl}
+startTime: ${downloadItem.startTime}
 `
-  var url = 'data:application/json;base64,' + btoa(result),
-  filename = downloadItem.filename.split(/[\/\\]/).slice(-1)[0] + '.meta.txt'
+  var url = 'data:application/x-yaml;base64,' + btoa(result),
+  filename = downloadItem.filename.split(/[\/\\]/).slice(-1)[0] + '.meta.yml'
   chrome.downloads.download({url: url, filename: filename, conflictAction: chrome.downloads.FilenameConflictAction.prompt, saveAs: false});
   delete storage[downloadItem.id];
 }
